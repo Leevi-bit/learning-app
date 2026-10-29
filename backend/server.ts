@@ -28,6 +28,13 @@ const entries: LearningEntryData[] = [
     date: "2026-10-26",
     learned: "Props types define what data a component expects to receive.",
     confidence: 4
+  },
+  {
+    id: 3,
+    topic: "Express API",
+    date: "2026-10-29",
+    learned: "Express can return JSON",
+    confidence: 3
   }
 ];
 
