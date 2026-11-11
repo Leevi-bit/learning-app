@@ -4,4 +4,5 @@ export type LearningEntryData = {
   date: string;
   learned: string;
   confidence: number;
+  minutes: number;
 };
