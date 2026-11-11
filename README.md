@@ -1,32 +1,19 @@
-# React + TypeScript + Vite
+# Learning App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A fullstack app
 
-Currently, two official plugins are available:
+## Application Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Which React pages and reusable components did you create?
+HomePage & EntriesPage. LearningEntry is reusable component that displays one entry.
 
-## React Compiler
+- What do React, Express and MariaDB each do?
+React is on frontend & shows pages. Express is backend that recieves GET and POST requests.
+MariaDB stores learning entries.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- What is the difference between /entries and GET /api/entries?
+/entries is page in React, that shows entries to users.
+GET /api/entries is in Express and sends entries from database.
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- Why is REST a reasonable choice for this app?
+App needs that only for learning entries.
