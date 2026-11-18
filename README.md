@@ -17,3 +17,11 @@ GET /api/entries is in Express and sends entries from database.
 
 - Why is REST a reasonable choice for this app?
 App needs that only for learning entries.
+
+## State Management
+
+Local state: form fields (topic, date, learned, confidence, minutes).
+
+Zustand: the list of entries.
+
+MariaDB: saves the entries permanently.
