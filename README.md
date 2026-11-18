@@ -24,4 +24,4 @@ Local state: form fields (topic, date, learned, confidence, minutes).
 
 Zustand: the list of entries.
 
-MariaDB: saves the entries permanently.
+MariaDB: saves the entries permanently. Zustand saves only on browsers memory. GET loads entries from database.
