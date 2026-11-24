@@ -14,10 +14,22 @@ export async function loadEntries() {
 }
 
 export async function saveEntry(entry: NewLearningEntry) {
-  const response = await fetch(API_URL, {
+  let response: Response;
+  try {
+    response = await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(entry),
-  });
-  if (!response.ok) throw new Error("Could not save entry");
+    });
+  } catch {
+    throw new Error("Could not confirm the save. Check the connection and reload the list before trying again.");
+  }
+
+  if (!response.ok) {
+    throw new Error(
+      response.status === 400
+        ? "Could not save the entry. Check your input."
+        : "The server could not save the entry. Please try again."
+    );
+  }
 }

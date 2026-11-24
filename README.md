@@ -25,3 +25,26 @@ Local state: form fields (topic, date, learned, confidence, minutes).
 Zustand: the list of entries.
 
 MariaDB: saves the entries permanently. Zustand saves only on browsers memory. GET loads entries from database.
+
+## Testing & Reliability
+
+### Unit tests
+
+Command:
+npm test
+
+Results:
+- confidence test: pass
+- minutes test: pass
+
+confidence must be an integer from 1 to 5
+minutes must be an integer that is 0 or more
+
+### Manual checks
+
+| Test | Expected | Actual | Result |
+|---|---|---|---|
+| Empty topic (direct to Express) | 400 | 400 | Pass |
+| Confidence = 100 | 400 | 400 | Pass |
+| Missing minutes | 400 | 400 | Pass |
+| Express stopped, valid form | Error, list unchanged | Error, list unchanged | Pass |

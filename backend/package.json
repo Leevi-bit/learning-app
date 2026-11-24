@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test validation.test.ts"
   },
   "keywords": [],
   "author": "",

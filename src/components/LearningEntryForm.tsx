@@ -13,8 +13,8 @@ export default function LearningEntryForm() {
     setMessage("");
     try {
       await saveEntry(entry);
-    } catch {
-      setMessage("Saving failed. Please try again.");
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Saving failed. Please try again.");
       return;
     }
 

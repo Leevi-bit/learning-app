@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import mysql from "mysql2/promise";
 import type { RowDataPacket, ResultSetHeader } from "mysql2";
+import { isValidConfidence, isValidMinutes } from "./validation.js";
 
 type LearningEntryData = {
   id: number;
@@ -48,8 +49,8 @@ app.post("/api/entries", async (req, res) => {
   if (typeof topic !== "string" || !topic.trim() ||
       typeof date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(date) ||
       typeof learned !== "string" || !learned.trim() ||
-      !Number.isInteger(confidence) || confidence < 1 || confidence > 5 ||
-      !Number.isInteger(minutes) || minutes < 0) {
+      !isValidConfidence(confidence) ||
+      !isValidMinutes(minutes)) {
     return res.status(400).json({ error: "Invalid learning entry" });
   }
 
